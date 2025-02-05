@@ -109,6 +109,7 @@ function ImageRelace($logo)
 
 function drawMatchCells($pdf, $x, $y, $width_team, $width_score, $height_cell, $space_x, $space_y, $match_data, $border)
 {
+
     // Définition des dimensions de l'image
     $imageWidth = 10 / 2.5; // Largeur de l'image en pouces
     $imageHeight = 15 / 2.5; // Hauteur de l'image en pouces
@@ -127,7 +128,6 @@ function drawMatchCells($pdf, $x, $y, $width_team, $width_score, $height_cell, $
     $pdf->SetXY($x + 23, $y + 9.2);
     $pdf->Cell($width_score + 1, $height_cell, $match_data[6], $border, 0, 'L', 1, 1, 1, false, '', 'L');
 
-
     // Définition de la font et couleurs pour nom des équipes et scores
     $pdf->SetTextColor(0, 0, 0, 0);
     $pdf->setCellPaddings(1, 0, 1, 0);
@@ -140,6 +140,7 @@ function drawMatchCells($pdf, $x, $y, $width_team, $width_score, $height_cell, $
     $pdf->SetXY($x + $width_team + $space_x, $y);
     $pdf->Cell($width_score, $height_cell, $match_data[3], $border, 0, 'L', 1, 1, 1, false, '', 'M');
     $pdf->Image(ImageRelace($match_data[2]), $x - 4.5, $y - 0.3, $imageWidth, $imageHeight, 'PNG', '', '', false, 300, '', false, false, 0, '', false, false);
+
     // #2 Equipes, scores et Ecussons 
     $pdf->SetXY($x, $y + $height_cell + $space_y);
     $pdf->Cell($width_team, $height_cell, $match_data[4], $border, 0, 'L', 1, 1, 1, false, '', 'L');
