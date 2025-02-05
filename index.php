@@ -81,10 +81,24 @@
         padding-left: 3px;
     }
 
+    .ap {
+        display: flex;
+        margin: 10px 0px 0px 36px;
+    }
+
+    .spaceLeft {
+        margin-left: 7px;
+
+    }
+
     h1,
     h3 {
         margin-bottom: 7px;
         text-align: center;
+    }
+
+    p {
+        font-style: italic;
     }
 
     img {
@@ -202,6 +216,10 @@ $competition = $_GET['competition'];
                 <img id="team2_qf4-logo" alt="" data-team-name="">
                 <input type="text" id="team2_qf4" readonly placeholder="Équipe 2" class="equipe" value="Exeter">
                 <input type="number" id="score2_qf4" placeholder="" class="score">
+                <div class="ap">
+                    <input type="checkbox" name="ap_qf4" id="ap_qf4" value="(a. p.)">
+                    <p class="spaceLeft">Cocher pour (a. p.)</p>
+                </div>
             </div>
             <div class="quarter-final">
                 <h3>Quart de finale 1</h3>
@@ -214,6 +232,10 @@ $competition = $_GET['competition'];
                 <img id="team2_qf1-logo" alt="">
                 <input type="text" id="team2_qf1" readonly placeholder="Équipe 2" class="equipe" value="Harlequins">
                 <input type="number" id="score2_qf1" placeholder="" class="score">
+                <div class="ap">
+                    <input type="checkbox" name="ap_qf1" id="ap_qf1" value="(a. p.)">
+                    <p class="spaceLeft">Cocher pour (a. p.)</p>
+                </div>
             </div>
         </div>
         <div class="semi-final">
@@ -227,6 +249,10 @@ $competition = $_GET['competition'];
             <img id="team2_sf1-logo" alt="">
             <input type="text" id="team2_sf1" readonly placeholder="Équipe 2" class="equipe">
             <input type="number" id="score2_sf1" placeholder="" class="score">
+            <div class="ap">
+                <input type="checkbox" name="ap_sf1" id="ap_sf1" value="(a. p.)">
+                <p class="spaceLeft">Cocher pour (a. p.)</p>
+            </div>
         </div>
         <div class="semi-final">
             <h3>Demi-finale 2</h3>
@@ -239,6 +265,10 @@ $competition = $_GET['competition'];
             <img id="team2_sf2-logo" alt="">
             <input type="text" id="team2_sf2" readonly placeholder="Équipe 2" class="equipe">
             <input type="number" id="score2_sf2" placeholder="" class="score">
+            <div class="ap">
+                <input type="checkbox" name="ap_sf2" id="ap_sf2" value="(a. p.)">
+                <p class="spaceLeft">Cocher pour (a. p.)</p>
+            </div>
         </div>
         <div>
             <div class="quarter-final">
@@ -252,6 +282,10 @@ $competition = $_GET['competition'];
                 <img id="team2_qf2-logo" alt="">
                 <input type="text" id="team2_qf2" readonly placeholder="Équipe 2" class="equipe">
                 <input type="number" id="score2_qf2" placeholder="" class="score">
+                <div class="ap">
+                    <input type="checkbox" name="ap_qf2" id="ap_qf2" value="(a. p.)">
+                    <p class="spaceLeft">Cocher pour (a. p.)</p>
+                </div>
             </div>
             <div class="quarter-final">
                 <h3>Quart de finale 3</h3>
@@ -264,6 +298,10 @@ $competition = $_GET['competition'];
                 <img id="team2_qf3-logo" alt="">
                 <input type="text" id="team2_qf3" readonly placeholder="Équipe 2" class="equipe">
                 <input type="number" id="score2_qf3" placeholder="" class="score">
+                <div class="ap">
+                    <input type="checkbox" name="ap_qf3" id="ap_qf3" value="(a. p.)">
+                    <p class="spaceLeft">Cocher pour (a. p.)</p>
+                </div>
             </div>
         </div>
     </div>
@@ -278,6 +316,10 @@ $competition = $_GET['competition'];
         <img id="team2_final-logo" alt="">
         <input type="text" id="team2_final" readonly placeholder="Équipe 2" class="equipe">
         <input type="number" id="score2_final" placeholder="" class="score">
+        <div class="ap">
+            <input type="checkbox" name="ap_final" id="ap_final" value="(a. p.)">
+            <p class="spaceLeft">Cocher pour (a. p.)</p>
+        </div>
     </div>
     <div class="center">
         </br>
@@ -315,6 +357,15 @@ $competition = $_GET['competition'];
             inputs.forEach(function(input) {
                 // Ajouter chaque valeur de champ d'entrée au formData
                 formData.append(input.id, input.value);
+                // Vérifier si l'élément est un checkbox
+                if (input.type === 'checkbox') {
+                    // Ajouter l'état du checkbox au formData
+                    formData.append(input.id, input.checked ? '(a. p.)' : 'unchecked');
+                } else {
+                    // Pour d'autres types d'input, ajoutez leur valeur au formData
+                    formData.append(input.id, input.value);
+                }
+
             });
 
             // Créer un objet XMLHttpRequest

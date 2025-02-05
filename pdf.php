@@ -121,6 +121,13 @@ function drawMatchCells($pdf, $x, $y, $width_team, $width_score, $height_cell, $
     $pdf->SetXY($x, $y - 3.5);
     $pdf->Cell($width_team + $width_score, $height_cell, $match_data[1], $border, 0, 'L', 1, 1, 1, false, '', 'L');
 
+    // Définition (a. p.)
+    $pdf->SetTextColor(0, 0, 0, 100);
+    $pdf->SetFont('robotoi', '', 5, '', false);
+    $pdf->SetXY($x + 23, $y + 9.2);
+    $pdf->Cell($width_score + 1, $height_cell, $match_data[6], $border, 0, 'L', 1, 1, 1, false, '', 'L');
+
+
     // Définition de la font et couleurs pour nom des équipes et scores
     $pdf->SetTextColor(0, 0, 0, 0);
     $pdf->setCellPaddings(1, 0, 1, 0);
