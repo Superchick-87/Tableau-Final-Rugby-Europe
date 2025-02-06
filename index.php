@@ -496,33 +496,6 @@ $competition = $_GET['competition'];
     </script>
     <script src="js/camelize.js"></script>
     <script>
-        // Fonction pour supprimer les espaces, les accents et les tirets d'une chaîne de caractères
-        // function cleanString(str) {
-        //     // Remplacer les espaces par une chaîne vide
-        //     let stringWithoutSpaces = str.replace(/\s+/g, '');
-
-        //     // Remplacer les caractères accentués, les tirets et autres caractères spéciaux
-        //     const accentsMap = {
-        //         'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u',
-        //         'à': 'a', 'è': 'e', 'ì': 'i', 'ò': 'o', 'ù': 'u',
-        //         'â': 'a', 'ê': 'e', 'î': 'i', 'ô': 'o', 'û': 'u',
-        //         'ä': 'a', 'ë': 'e', 'ï': 'i', 'ö': 'o', 'ü': 'u',
-        //         'ã': 'a', 'ñ': 'n', 'õ': 'o', 'ç': 'c',
-        //         'Á': 'A', 'É': 'E', 'Í': 'I', 'Ó': 'O', 'Ú': 'U',
-        //         'À': 'A', 'È': 'E', 'Ì': 'I', 'Ò': 'O', 'Ù': 'U',
-        //         'Â': 'A', 'Ê': 'E', 'Î': 'I', 'Ô': 'O', 'Û': 'U',
-        //         'Ä': 'A', 'Ë': 'E', 'Ï': 'I', 'Ö': 'O', 'Ü': 'U',
-        //         'Ã': 'A', 'Ñ': 'N', 'Õ': 'O', 'Ç': 'C',
-        //         '-': '', // Supprimer les tirets
-        //         '_': '' // Supprimer les underscores (caractère de soulignement)
-        //     };
-
-        //     stringWithoutSpaces = stringWithoutSpaces.replace(/[^a-zA-Z0-9]/g, function (character) {
-        //         return accentsMap[character] || character;
-        //     });
-
-        //     return stringWithoutSpaces;
-        // }
         const qfElements = document.querySelectorAll('.quarter-final');
 
         // Ajoutez des écouteurs d'événements pour les quarts de finale
