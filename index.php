@@ -414,6 +414,7 @@ $competition = $_GET['competition'];
                         const score1Final = finaleColumns[3]; // Ajustement de l'index pour le premier score
                         const equipe2Final = finaleColumns[4]; // Ajustement de l'index pour la deuxième équipe
                         const score2Final = finaleColumns[5]; // Ajustement de l'index pour le deuxième score
+                        const apF = finaleColumns[6]; // Ajustement de l'index pour le deuxième score
 
                         // Mettre à jour les valeurs des inputs pour la finale
                         document.getElementById(`lieu_final`).value = lieuFinal || "";
@@ -421,6 +422,8 @@ $competition = $_GET['competition'];
                         document.getElementById(`score1_final`).value = score1Final || "";
                         document.getElementById(`team2_final`).value = equipe2Final || "";
                         document.getElementById(`score2_final`).value = score2Final || "";
+                        // Mettre à jour les valeurs des inputs ap
+                        document.getElementById(`ap_final`).checked = apF;
 
                         // Mettre à jour les images des équipes pour la finale
                         const imgSrc1Final = equipe1Final ? `images/Rugby/${camelize(equipe1Final)}.png` : 'images/Rugby/xx.png';
@@ -440,6 +443,7 @@ $competition = $_GET['competition'];
                         const score1QF = columns[3];
                         const equipe2QF = columns[4];
                         const score2QF = columns[5];
+                        const apQF = columns[6];
 
                         // Mettre à jour les valeurs des inputs pour les quarts de finale
                         document.getElementById(`lieu_qf${i + 1}`).value = lieuQF;
@@ -447,6 +451,8 @@ $competition = $_GET['competition'];
                         document.getElementById(`score1_qf${i + 1}`).value = score1QF;
                         document.getElementById(`team2_qf${i + 1}`).value = equipe2QF;
                         document.getElementById(`score2_qf${i + 1}`).value = score2QF;
+                        // Mettre à jour les valeurs des inputs ap
+                        document.getElementById(`ap_qf${i + 1}`).checked = apQF;
 
                         // Mettre à jour les images des équipes pour les quarts de finale
                         const imgSrc1QF = equipe1QF ? `images/Rugby/${camelize(equipe1QF)}.png` : 'images/Rugby/xx.png';
@@ -464,6 +470,7 @@ $competition = $_GET['competition'];
                         const score1SF = columns[3];
                         const equipe2SF = columns[4];
                         const score2SF = columns[5];
+                        const apSF = columns[6];
 
                         // Mettre à jour les valeurs des inputs pour les demi-finales et la finale
                         document.getElementById(`lieu_sf${i - 3}`).value = lieuSF;
@@ -471,6 +478,8 @@ $competition = $_GET['competition'];
                         document.getElementById(`score1_sf${i - 3}`).value = score1SF;
                         document.getElementById(`team2_sf${i - 3}`).value = equipe2SF;
                         document.getElementById(`score2_sf${i - 3}`).value = score2SF;
+                        // Mettre à jour les valeurs des inputs ap
+                        document.getElementById(`ap_sf${i - 3}`).checked = apSF;
 
                         // Mettre à jour les images des équipes pour les demi-finales et la finale
                         const imgSrc1SF = equipe1SF ? `images/Rugby/${camelize(equipe1SF)}.png` : 'images/Rugby/xx.png';
